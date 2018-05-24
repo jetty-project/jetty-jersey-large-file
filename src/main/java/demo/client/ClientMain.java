@@ -20,6 +20,8 @@ import org.eclipse.jetty.util.IO;
 import org.eclipse.jetty.util.StringUtil;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 
+import demo.Common;
+
 public class ClientMain
 {
     public static void main(String[] args) throws Exception
@@ -31,7 +33,7 @@ public class ClientMain
 
         URI srcUri = URI.create(uriString);
 
-        SslContextFactory ssl = new SslContextFactory(true);
+        SslContextFactory ssl = Common.loadSslContextFactory();
 
         HttpClient client = new HttpClient(ssl);
         try
